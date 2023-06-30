@@ -1,7 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import Card from "../Components/Card";
+import { ContextGlobal } from '../Components/utils/global.context'
 
 const Favs = () => {
+  const { state } = useContext(ContextGlobal)
+  const { theme } = state
+
   const [favorites, setFavorites] = useState([]);
 
   useEffect(() => {
@@ -24,18 +28,20 @@ const Favs = () => {
 
   return (
     <>
-      <h1>Dentists Favs</h1>
-      <div className="card-grid">
-        {favorites.map((dentist) => (
-          <Card
-            key={dentist.id}
-            name={dentist.name}
-            username={dentist.username}
-            id={dentist.id}
-            onRemoveFromFavorites={handleRemoveFromFavorites}
-          />
-        ))}
-      </div>
+      <main className={`${theme === "dark" ? "dark" : "light"}`}>
+        <h2>Dentists Favs</h2>
+        <div className="card-grid">
+          {favorites.map((dentist) => (
+            <Card
+              key={dentist.id}
+              name={dentist.name}
+              username={dentist.username}
+              id={dentist.id}
+              onRemoveFromFavorites={handleRemoveFromFavorites}
+            />
+          ))}
+        </div>
+      </main>
     </>
   );
 };

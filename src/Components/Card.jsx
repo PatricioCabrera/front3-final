@@ -43,14 +43,19 @@ const Card = ({ name, username, id, onRemoveFromFavorites }) => {
     <div className={`card ${theme === "dark" ? "dark" : "light"}`}>
       <img src={dentistImage} alt="" className="card__image" />
       <h3 className="card__title">{name}</h3>
-      <p className="card__username">{username}</p>
-      <p className="card__id">{id}</p>
-      <button onClick={handleAddToFavorites} className="card__button">
-        {buttonText}
-      </button>
-      <Link to={`/dentist/${id}`} className="card__link">
-        View More
-      </Link>
+      <p className="card__username">User: {username}</p>
+      <p className="card__id">Id:{id}</p>
+      <div className="card__button__area">
+        <button
+          onClick={handleAddToFavorites}
+          className="card__button card__button--fav"
+        >
+          {buttonText}
+        </button>
+        <Link to={`/dentist/${id}`} className="card__button card__button--details">
+          Details
+        </Link>
+      </div>
     </div>
   );
 };

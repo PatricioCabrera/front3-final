@@ -1,11 +1,13 @@
 import React, { useContext } from "react"
 import { useParams } from "react-router-dom"
 import { ContextGlobal } from "./utils/global.context"
+import dentistImage from "../Assets/doctor.jpg";
 
 const CardDetails = () => {
   const { id } = useParams()
   const { state } = useContext(ContextGlobal)
   const { data, loading } = state
+  const { theme } = state;
 
   if (loading) {
     return <p>Loading...</p>
@@ -21,11 +23,12 @@ const CardDetails = () => {
   const { name, email, username, address, website } = dentist
 
   return (
-    <div className="card">
-      <h3>{name}</h3>
-      <h3>ID: {id}</h3>
-      <p>Email: {email}</p>
-      <p>Username: {username}</p>
+    <div className={`card ${theme === "dark" ? "dark" : "light"}`}>
+      <img src={dentistImage} alt="" className="card__image" />
+      <h3 className="card__title">{name}</h3>
+      <p className="card__username">{username}</p>
+      <p className="card__email">{username}</p>
+      <p className="card__id">{id}</p>
       <p>Address: {address.street}, {address.city}</p>
       <p>Website: {website}</p>
     </div>
