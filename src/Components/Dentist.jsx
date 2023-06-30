@@ -15,9 +15,9 @@ const Dentist = () => {
   }
 
   return (
-    <div className={`dentists ${theme === "dark" ? "dark" : "light"}`}>
+    <>
       {data.length > 0 ? (
-        <div className="cards">
+        <div className={`cards ${theme === "dark" ? "dark" : "light"}`}>
           {data.map((item) => (
             <Card
               key={item.id}
@@ -30,8 +30,8 @@ const Dentist = () => {
       ) : (
         <p>No dentists found.</p>
       )}
-    </div>
-  );
-};
+    </>
+  );  
+}
 
 export default Dentist;

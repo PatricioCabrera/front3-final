@@ -1,8 +1,10 @@
-import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import React, { useState, useEffect, useContext } from "react"
+import { Link } from "react-router-dom"
+import { ContextGlobal } from "./utils/global.context"
 
 const Card = ({ name, username, id, onRemoveFromFavorites }) => {
-  const [buttonText, setButtonText] = useState("Add fav");
+  const [buttonText, setButtonText] = useState("Add fav")
+  const { theme } = useContext(ContextGlobal); // Accede al estado del tema desde el contexto
 
   useEffect(() => {
     const existingFavorites = localStorage.getItem("favorites");
@@ -36,15 +38,15 @@ const Card = ({ name, username, id, onRemoveFromFavorites }) => {
   };
 
   return (
-    <div className="card">
-      <img src={"https://th.bing.com/th/id/OIP.tBFeNt8QSGZbIIzrIw3IewHaHa?pid=ImgDet&rs=1"} alt="" width={100} height={100} />
-      <h3>{name}</h3>
-      <p>{username}</p>
-      <p>{id}</p>
-      <button onClick={handleAddToFavorites} className="favButton">
+    <div className={`card ${theme === "dark" ? "dark" : "light"}`}>
+      <img src="https://th.bing.com/th/id/OIP.tBFeNt8QSGZbIIzrIw3IewHaHa?pid=ImgDet&rs=1" alt="" className="card__image" />
+      <h3 className="card__title">{name}</h3>
+      <p className="card__username">{username}</p>
+      <p className="card__id">{id}</p>
+      <button onClick={handleAddToFavorites} className="card__button">
         {buttonText}
       </button>
-      <Link to={`/dentist/${id}`}>View More</Link>
+      <Link to={`/dentist/${id}`} className="card__link">View More</Link>
     </div>
   );
 };
