@@ -1,70 +1,94 @@
-# Getting Started with Create React App
+# ctd-fe3-final
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Examen Final de Frontend III
 
-## Available Scripts
+## Indice
 
-In the project directory, you can run:
+- [Requisitos](#requisitos)
+  - [Condiciones mínimas de aprobación](#condiciones-mínimas-de-aprobación)
+  - [Aspectos que modifican la valoración final de la nota](#aspectos-que-modifican-la-valoración-final-de-la-nota)
+- [Funcionalidades](#funcionalidades)
+- [Desarrollo](#desarrollo)
+- [API](#api)
+- [Entrega](#entrega)
+  - [Fecha de Entrega](#fecha-de-entrega)
+  - [Formato de Entrega](#formato-de-entrega)
 
-### `npm start`
+## Requisitos
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Es indispensable clonar este proyecto en un repositorio privado, para poder trabajar de forma _individual_ o en _dupla_. No se aceptarán proyectos que se hayan realizado sin partir de este template. Para eso deberás crear un repositorio con el nombre "ctd-esp-fe3-final" en tu cuenta de Github y luego seguir los siguientes pasos en tu terminal
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+```
+# clona el repositorio del final en tu computadora
+git clone https://github.com/Frontend-III/fe3-final
 
-### `npm test`
+# ingresa al directorio del final
+cd fe3-final
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+# elimina los links al repositorio de DH
+git remove remote origin
 
-### `npm run build`
+# Agrega el link al repositorio de tu cuenta de github, reemplaza <tuusuario> por tu cuenta
+git remote add origin https://github.com/<tuusuario>/fe3-final
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+# Sube el template inicial a tu repositorio de github
+git push -u origin main
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Condiciones de aprobación
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Las siguientes condiciones son requisitos mínimos necesarios para la aprobación del final:
 
-### `npm run eject`
+- **Cumplir con todas las funcionalidades obligatorias**
+- Solo se podrán utilizar las librerías que se detallan en este README. Ver [Dependencias](docs/desarrollo.md#dependencias)
+- No se considerará realizada cualquier funcionalidad que sea implementada utilizando una librería distinta a las permitidas.
+- Deberá ser desarrollada utilizando Javascript con React.js como libreria.
+- Se espera que la página de Contacto, contenga los flujos de validación necesarios (minimo 2 validaciones), para un correcto submit del formulario.
+- En los casos en que se requiera dar estilos a componentes, deberá realizarse teniendo en cuenta el theme del contexto global.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Aspectos que modifican la valoración final de la nota
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Los siguientes aspectos son extras al requisito mínimo de aprobación que serán tenidos en cuenta para aumentar la nota final, siempre y cuando su implementación sea correcta:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+**Validaciones**
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- Una validación para cada campor es suficiente, pueden ser "manuales" o con expreciones regulares. Lo importante es el correcto manejo de errores y submit.
 
-## Learn More
+**Funcionalidad de destacados**
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- Se valorará funcionalidades extra a esta feature, como lo pueden ser el eliminar de destacadados, manejo de errores al intentar agregar repetidos y reseteo total de los destacados.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
+**Estilos**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+- Se valorará el estilado de demas apartados de la App (por fuera del estilado obligatorio de las rutas en base al theme)
 
-### Analyzing the Bundle Size
+**Buenas Prácticas**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- Se prestará especial atención al uso de buenas prácticas, mejoras de performance (implementando useMemo) y la reutilizacion de codigo
 
-### Making a Progressive Web App
+## Funcionalidades
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Ver [Funcionalidades](docs/funcionalidades.md).
 
-### Advanced Configuration
+## Desarrollo
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Ver [Desarrollo](docs/desarrollo.md).
 
-### Deployment
+## API
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+La API a utilizar sera la siguiente:
+`https://jsonplaceholder.typicode.com/users`
 
-### `npm run build` fails to minify
+Y para cada dentista en especifico:
+`https://jsonplaceholder.typicode.com/users/:id`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Formato de Entrega
+
+- No deberan cambiar los nombres ni ubicacion de las variables/componentes/context que vienen con el repo base
+
+Se aceptará la entrega mediante la submisión de la URL de su repositorio clonado
+
+El link al Google Form para la submisión será enviado por el profesor a cargo de la comisión.
+
+Mucha suerte y éxitos!
