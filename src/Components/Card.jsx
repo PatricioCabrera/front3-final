@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useContext } from "react"
 import { Link } from "react-router-dom"
 import { ContextGlobal } from "./utils/global.context"
+import dentistImage from "../Assets/doctor.jpg"
 
 const Card = ({ name, username, id, onRemoveFromFavorites }) => {
   const [buttonText, setButtonText] = useState("Add fav")
@@ -39,7 +40,7 @@ const Card = ({ name, username, id, onRemoveFromFavorites }) => {
 
   return (
     <div className={`card ${theme === "dark" ? "dark" : "light"}`}>
-      <img src="https://th.bing.com/th/id/OIP.tBFeNt8QSGZbIIzrIw3IewHaHa?pid=ImgDet&rs=1" alt="" className="card__image" />
+      <img src={dentistImage} alt="" className="card__image" />
       <h3 className="card__title">{name}</h3>
       <p className="card__username">{username}</p>
       <p className="card__id">{id}</p>
