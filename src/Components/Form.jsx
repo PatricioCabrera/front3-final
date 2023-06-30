@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
+import { ContextGlobal } from '../Components/utils/global.context'
 
 const Form = () => {
   // Create state variables for each input field
@@ -6,6 +7,10 @@ const Form = () => {
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
   const [lastName, setLastName] = useState("");
+
+  const { state } = useContext(ContextGlobal);
+  const { theme } = state;
+
 
   // Create a state variable for the message
   const [message, setMessage] = useState("");
@@ -34,7 +39,7 @@ const Form = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form className={theme === 'dark' ? 'dark' : 'light'}onSubmit={handleSubmit}>
       <label className="formLabel">
         Text:
         <input className="formInput"
