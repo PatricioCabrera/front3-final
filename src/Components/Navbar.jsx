@@ -28,11 +28,6 @@ const Navbar = () => {
           </Link>
         </li>
         <li className="Navbar__item">
-          <Link className="Navbar__link" to="/detail">
-            Detail
-          </Link>
-        </li>
-        <li className="Navbar__item">
           <Link className="Navbar__link" to="/favs">
             Favs
           </Link>
