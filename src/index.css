@@ -103,7 +103,7 @@ form {
   margin-bottom: 15px;
   border: 0.5px solid rgb(136, 136, 136);
   transition: border-color 0.3s ease-in-out;
-  cursor: pointer;
+  cursor: default;
   background-color: #ffffff;
   color: #000000;
   -webkit-box-shadow: 6px 3px 4px -3px rgba(0,0,0,0.48);
