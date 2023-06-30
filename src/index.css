@@ -106,6 +106,12 @@ form {
   margin: 0 auto;
 }
 
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-gap: 20px;
+}
+
 table {
   border-collapse: collapse;
   border-spacing: 0;
@@ -147,6 +153,21 @@ tr:nth-child(even) {
 .App {
   display: flex;
   flex-direction: column;
+}
+
+.themeButton {
+  background-color: #6c63ff;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+
+}
+
+.themeButton:hover {
+  background-color: #844dff;
 }
 
 /* Easter Egg */
