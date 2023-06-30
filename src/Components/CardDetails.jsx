@@ -17,21 +17,26 @@ const CardDetails = () => {
 
   if (!dentist) {
     return <p>Error: Dentist details not found.</p>
-    
+
   }
 
   const { name, email, username, address, website } = dentist
 
   return (
-    <div className={`card ${theme === "dark" ? "dark" : "light"}`}>
-      <img src={dentistImage} alt="" className="card__image" />
-      <h3 className="card__title">{name}</h3>
-      <p className="card__username">{username}</p>
-      <p className="card__email">{username}</p>
-      <p className="card__id">{id}</p>
-      <p>Address: {address.street}, {address.city}</p>
-      <p>Website: {website}</p>
-    </div>
+    <main className={theme === 'dark' ? 'dark' : 'light'}>
+      <h1>Dentist details</h1>
+      <div className="card-grid">
+        <div className={`card ${theme === "dark" ? "dark" : "light"}`}>
+          <img src={dentistImage} alt="" className="card__image" />
+          <h3 className="card__title">{name}</h3>
+          <p className="card__username">{username}</p>
+          <p className="card__email">{username}</p>
+          <p className="card__id">{id}</p>
+          <p>Address: {address.street}, {address.city}</p>
+          <p>Website: {website}</p>
+        </div>
+      </div>
+    </main>
   );
 };
 

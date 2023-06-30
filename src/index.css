@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -5,6 +9,11 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+main {
+  height: 100%;
+  padding-bottom: 10vh;
 }
 
 code {
@@ -30,6 +39,7 @@ h1 {
   align-items: center;
   justify-content: center;
   padding: 1rem;
+  height: 10vh;
 }
 
 .Navbar__list {
@@ -217,12 +227,21 @@ tr:nth-child(even) {
 }
 
 .dark {
-  background-color: #12121296;
   color: white;
+  background-color: #222;
 }
 
 .dark > a {
   color: white;
+}
+
+.contactForm.dark {
+  color: #fff;
+  background-color: #fff;
+}
+
+.dark > .formContainer {
+  color: black;
 }
 
 .Navbar{
@@ -297,6 +316,7 @@ tr:nth-child(even) {
   color: #000;
   padding: 5px;
 }
+
 .formLabel {
   display: block;
   margin-bottom: 8px;
@@ -326,16 +346,11 @@ tr:nth-child(even) {
   background-color: #844dff;
 }
 
-.dark {
-  color: #fff;
-  background-color: #222;
-}
-
 .dark .formTitle,
 .dark .formDescription,
 .dark .formLabel,
 .dark .formInput {
-  color: #fff;
+  color: #000;
 }
 
 /* Estilos del footer*/
@@ -346,10 +361,10 @@ footer {
   align-items: center;
   text-align: center;
   padding: 2rem;
-  position: relative;
+  position: fixed;
   bottom: 0;
   width: 100%;
-  height: 40px;
+  height: 10vh;
   margin-top: 2rem;
   background-color: #f9f9f9;
 }

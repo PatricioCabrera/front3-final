@@ -39,7 +39,7 @@ const Form = () => {
   };
 
   return (
-    <form className={theme === 'dark' ? 'dark' : 'light'}onSubmit={handleSubmit}>
+    <form className={`contactForm ${theme === 'dark' ? 'dark' : 'light'}`} onSubmit={handleSubmit}>
       <label className="formLabel">
         Text:
         <input className="formInput"
