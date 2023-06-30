@@ -35,18 +35,18 @@ const Form = () => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <label>
+      <label className="formLabel">
         Text:
-        <input
+        <input className="formInput"
           type="text"
           name="text"
           value={text}
           onChange={(e) => setText(e.target.value)}
         />
       </label>
-      <label>
+      <label className="formLabel">
         Email:
-        <input
+        <input className="formInput"
           type="email"
           name="email"
           value={email}
@@ -56,9 +56,9 @@ const Form = () => {
           title="Please enter a valid email address"
         />
       </label>
-      <label>
+      <label className="formLabel">
         Name:
-        <input
+        <input className="formInput"
           type="name"
           name="name"
           value={name}
@@ -66,9 +66,9 @@ const Form = () => {
           
         />
       </label>
-      <label>
+      <label className="formLabel">
         Last Name:
-        <input
+        <input className="formInput"
           type="lastName"
           name="lastName"
           value={lastName}
@@ -76,7 +76,7 @@ const Form = () => {
           
         />
       </label>
-      <button type="submit">Submit</button>
+      <button className= 'formButton'   type="submit">Submit</button>
       {/* Add a paragraph element to display the message */}
       <p style={{ color: message.includes("success") ? "green" : "red" }}>
         {message}

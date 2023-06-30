@@ -78,7 +78,8 @@ form {
   justify-content: space-around;
   width: 300px;
   height: 100px;
-  margin: 0 auto;
+  margin-bottom: 20px;
+  padding: 60px;
 }
 
 .card {
@@ -225,6 +226,64 @@ tr:nth-child(even) {
 
 .themeButton:hover {
   background-color: #844dff;
+}
+
+/* Estilos del form*/
+
+.formContainer {
+  max-width: 400px;
+  margin: 0 auto;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 4px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.formDescription {
+  font-size: 16px;
+  margin-bottom: 60px;
+  color: #000;
+  padding: 5px;
+}
+.formLabel {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: #000;
+}
+
+.formInput {
+  width: 100%;
+  padding: 2px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-bottom: 8px;
+  color: #000;
+}
+
+.formButton {
+  background-color: #6c63ff;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.formButton:hover {
+  background-color: #844dff;
+}
+
+.dark {
+  color: #fff;
+  background-color: #222;
+}
+
+.dark .formTitle,
+.dark .formDescription,
+.dark .formLabel,
+.dark .formInput {
+  color: #fff;
 }
 
 /* Easter Egg */
