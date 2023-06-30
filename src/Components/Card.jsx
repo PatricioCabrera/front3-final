@@ -1,11 +1,12 @@
-import React, { useState, useEffect, useContext } from "react"
-import { Link } from "react-router-dom"
-import { ContextGlobal } from "./utils/global.context"
-import dentistImage from "../Assets/doctor.jpg"
+import React, { useState, useEffect, useContext } from "react";
+import { Link } from "react-router-dom";
+import { ContextGlobal } from "./utils/global.context";
+import dentistImage from "../Assets/doctor.jpg";
 
 const Card = ({ name, username, id, onRemoveFromFavorites }) => {
-  const [buttonText, setButtonText] = useState("Add fav")
-  const { theme } = useContext(ContextGlobal); // Accede al estado del tema desde el contexto
+  const [buttonText, setButtonText] = useState("Add fav");
+  const { state } = useContext(ContextGlobal); // Access the global context directly
+  const { theme } = state;
 
   useEffect(() => {
     const existingFavorites = localStorage.getItem("favorites");
@@ -28,7 +29,7 @@ const Card = ({ name, username, id, onRemoveFromFavorites }) => {
       if (isFavorite) {
         const updatedFavorites = favorites.filter((item) => item.id !== id);
         localStorage.setItem("favorites", JSON.stringify(updatedFavorites));
-        onRemoveFromFavorites && onRemoveFromFavorites(id); // Llamar a la función de eliminación de favoritos en el componente Favs
+        onRemoveFromFavorites && onRemoveFromFavorites(id);
         setButtonText("Add fav");
       } else {
         favorites.push({ name, username, id });
@@ -47,7 +48,9 @@ const Card = ({ name, username, id, onRemoveFromFavorites }) => {
       <button onClick={handleAddToFavorites} className="card__button">
         {buttonText}
       </button>
-      <Link to={`/dentist/${id}`} className="card__link">View More</Link>
+      <Link to={`/dentist/${id}`} className="card__link">
+        View More
+      </Link>
     </div>
   );
 };

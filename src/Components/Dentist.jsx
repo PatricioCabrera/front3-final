@@ -17,21 +17,22 @@ const Dentist = () => {
   return (
     <>
       {data.length > 0 ? (
-        <div className={`cards ${theme === "dark" ? "dark" : "light"}`}>
+        <>
           {data.map((item) => (
             <Card
               key={item.id}
               name={item.name}
               username={item.username}
               id={item.id}
+              theme={theme} // Pass the theme explicitly as a prop
             />
           ))}
-        </div>
+        </>
       ) : (
         <p>No dentists found.</p>
       )}
     </>
-  );  
+  );
 }
 
 export default Dentist;
