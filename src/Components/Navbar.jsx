@@ -16,7 +16,7 @@ const Navbar = () => {
 
   return (
     <nav className={`Navbar ${theme}`}>
-      {<ul className="Navbar__list">
+      {<ul className={`Navbar__list ${theme}`}>
         <li className="Navbar__item">
           <Link className="Navbar__link" to="/home">
             Home
